@@ -1,0 +1,41 @@
+.preview-container {
+    border: 1px solid #fafafa;
+    padding: 2rem;
+    flex: 1 1 50%;
+    text-align: left;
+}
+
+.preview-container .generation {
+    border: 1px solid #c5baba;
+    border-radius: 2px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    /* margin-bottom: 1rem; */
+}
+
+.generation,
+.person {
+    transition: background-color 1s ease-in-out;
+}
+
+.generation:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.person {
+    padding: 0.5rem;
+}
+
+.highlight {
+    background-color: antiquewhite;
+}
+
+.correct {
+    position: relative;
+}
+.correct::before {
+    content: "✅";
+    position: absolute;
+    top: 0;
+    left: 0;
+}

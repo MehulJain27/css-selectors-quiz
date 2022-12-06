@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Code from './components/Code';
+import Preview from './components/Preview';
+import Questions from './components/Questions';
+import Template from './components/Template';
+import useCSSQuery from './hooks/useCSSQuery';
 
 function App() {
+  const { query, onChange, parentContainer, question, queIdx } = useCSSQuery()
+  const qNo = queIdx + 1
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>CSS Selectors Quiz</h1>
+      <div className='App-header'>
+        <Code source={Template} />
+        <Preview source={Template} parentRef={parentContainer} />
+      </div>
+      <Questions {...{ query, onChange, question, qNo }} />
+
     </div>
   );
 }
