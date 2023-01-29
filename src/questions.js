@@ -1,45 +1,27 @@
 
 const QUESTIONS = [
     {
-        question: 'Select All the person present',
-        answer: '.person'
+        question: 'Which position property can be used to fix navbars in position',
+        answer: `fixed`
     },
     {
-        question: 'Select only the Grand Father',
-        answer: '[data-id="2"]'
+        question: 'What is the default value for position property',
+        answer: 'static'
     },
     {
-        question: 'Select only the Third Generation Person in the list',
-        answer: '.third-generation .person'
+        question: `Which element will be on top? 
+            <div>1</div>       
+            <div>2</div>
+            <div>3</div>`,
+        answer: '3'
     },
     {
-        question: 'Select All Persons who wear 🥽',
-        answer: '[data-wears="🥽"]'
+        question: 'If z-index is not working, which CSS property should be inspected',
+        answer: 'position'
     },
     {
-        question: 'Select the Generation whose parent liked 🏐',
-        answer: '[data-likes="🏐"] + .generation'
-    },
-    {
-        question: 'Select All Second Generation People who like 🥎',
-        answer: '.second-generation > .person[data-likes=🥎]'
-    },
-    {
-        question: 'Select Kids whose parent wears 🕶️',
-        answer: '[data-wears="🕶️"]~div .person'
-    },
-    {
-        question: 'Select All People who like ⚽ but are not the first child',
-        answer: ':not(:first-child)[data-likes="⚽"]'
-    },
-    {
-        question: 'Select All people like ⚽ and wear 👓',
-        answer: '[data-likes="⚽"][data-wears="👓"]'
-    },
-    {
-        question: 'Select All Third Generation Person who wear 🥽 whose parents like 🥎',
-        answer: '.second-generation > .person[data-likes="🥎"] ~ .third-generation > .person[data-wears="🥽"]'
-    },
+        
+    }
 ]
 
 export default QUESTIONS

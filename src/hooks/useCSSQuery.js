@@ -19,38 +19,46 @@ export default function useCSSQuery() {
         const val = e.target.value
 
         setQuery(val);
-
-        if (!parentContainer.current) return;
-
-        const $submitted = parentContainer.current.querySelectorAll(val)
-        const $answer = parentContainer.current.querySelectorAll(qnA.answer)
-        console.log(qnA.answer, $answer)
-        cleanup()
-
-        try {
-            [].forEach.call($submitted, (element) => {
-                element.classList.add("highlight");
-            });
-
-            [].forEach.call($answer, (element) => {
-                element.classList.add("correct");
-            });
-
-            const incorrectAnswer = parentContainer.current.querySelectorAll(".highlight:not(.correct)").length > 0
-
-
-            if ($submitted.length && !incorrectAnswer) {
-                if (queIdx + 1 === QUESTIONS.length) return
+        if(val === qnA.answer) {
+            if (queIdx + 1 === QUESTIONS.length) return
 
                 setTimeout(() => {
                     setqueIdx(queIdx + 1)
                     setQuery('')
                     setTimeout(() => cleanup(), 100)
                 }, 1000)
-            } 
-        } catch (error) {
-            console.log(error)            
         }
+
+        if (!parentContainer.current) return;
+        // const $submitted = parentContainer.current.querySelectorAll(val)
+        // const $answer = parentContainer.current.querySelectorAll(qnA.answer)
+        // console.log(qnA.answer, $answer)
+        // cleanup()
+
+        // try {
+        //     [].forEach.call($submitted, (element) => {
+        //         element.classList.add("highlight");
+        //     });
+
+        //     [].forEach.call($answer, (element) => {
+        //         element.classList.add("correct");
+        //     });
+
+        //     // const incorrectAnswer = parentContainer.current.querySelectorAll(".highlight:not(.correct)").length > 0
+
+
+        //     // if ($submitted.length && !incorrectAnswer) {
+        //     //     if (queIdx + 1 === QUESTIONS.length) return
+
+        //     //     setTimeout(() => {
+        //     //         setqueIdx(queIdx + 1)
+        //     //         setQuery('')
+        //     //         setTimeout(() => cleanup(), 100)
+        //     //     }, 1000)
+        //     // } 
+        // } catch (error) {
+        //     console.log(error)            
+        // }
     }
 
     return {
