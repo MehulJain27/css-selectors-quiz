@@ -21,9 +21,13 @@ function App() {
         <Code source={Template} />
         <Preview source={Template} parentRef={parentContainer} />
       </div>
+      <h2> Section 1 </h2>
+      <h6> Type the answer in the Input Field below, press space after answer</h6>
       <Questions {...{ query, onChange, question, qNo }} />
       <br/>
       <div className="App">
+      <hr/>
+      <h2> Section 2</h2> <br></br>
       <h5> Below are some positioning tasks, click Run to load. </h5> 
       <h6>Position the green target box in the top right of the display box.</h6>
       <div className="playground">
